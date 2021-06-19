@@ -1,14 +1,11 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_workbench/src/flutter_workbench_app.dart';
 import 'package:screen_tester/screen_tester.dart';
-import 'package:screen_tester/widgets/device_preview_container.dart';
-import 'package:screen_tester/widgets/pixel_perfect_container.dart';
-import 'package:screen_tester/widgets/screen_tester_options.dart';
 import 'package:theme_builder/theme_builder.dart';
 import 'package:widget_tester/widget_tester.dart';
-import 'package:widget_tester/widget_tester_options.dart';
+
+import 'flutter_workbench_app.dart';
 
 abstract class FlutterWorkbench {
   static void runScreenTesterApp({
