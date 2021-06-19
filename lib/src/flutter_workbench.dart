@@ -47,7 +47,8 @@ abstract class FlutterWorkbench {
   static void runPixelPerfectApp({
     required String title,
     required ThemeBuilderThemes styles,
-    required Image image,
+    required String image,
+    required double scale,
     required Widget child,
   }) {
     return _runFlutterWorkbenchApp(
@@ -56,6 +57,7 @@ abstract class FlutterWorkbench {
         themes: styles,
         child: PixelPerfectContainer(
           image: image,
+          scale: scale,
           child: child,
         ),
       ),
