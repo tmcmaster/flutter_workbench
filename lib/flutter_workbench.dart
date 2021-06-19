@@ -1,4 +1,4 @@
-library flutter_package_template;
+library flutter_workbench;
 
 /// A Calculator.
 class Calculator {

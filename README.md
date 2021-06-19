@@ -1,4 +1,4 @@
-# flutter_package_template
+# flutter_workbench
 Flutter widget testing widget for dynamically widgets at different sizes.
 
 # To change the package name
