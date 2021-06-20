@@ -8,6 +8,20 @@ import 'package:widget_tester/widget_tester.dart';
 import 'flutter_workbench_app.dart';
 
 abstract class FlutterWorkbench {
+  static void runFlutterWorkbenchApp({
+    required String title,
+    required ThemeBuilderThemes styles,
+    required Widget child,
+  }) {
+    return _runFlutterWorkbenchApp(
+      FlutterWorkbenchApp(
+        title: title,
+        themes: styles,
+        child: child,
+      ),
+    );
+  }
+
   static void runScreenTesterApp({
     required String title,
     required ThemeBuilderThemes styles,
@@ -49,6 +63,7 @@ abstract class FlutterWorkbench {
     required ThemeBuilderThemes styles,
     required String image,
     required double scale,
+    required double opacity,
     required Widget child,
   }) {
     return _runFlutterWorkbenchApp(
@@ -58,6 +73,7 @@ abstract class FlutterWorkbench {
         child: PixelPerfectContainer(
           image: image,
           scale: scale,
+          opacity: opacity,
           child: child,
         ),
       ),

@@ -39,11 +39,11 @@ class FlutterWorkbenchApp extends StatelessWidget {
                   child: ThemeBuilderStyleSelector(),
                 ),
                 body: Container(
-                  margin: const EdgeInsets.all(15.0),
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.purple),
-                  ),
+                  // margin: const EdgeInsets.all(15.0),
+                  // padding: const EdgeInsets.all(10.0),
+                  // decoration: BoxDecoration(
+                  //   border: Border.all(color: Colors.purple),
+                  // ),
                   child: child,
                 ),
                 floatingActionButton: Builder(
