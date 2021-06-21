@@ -6,12 +6,14 @@ import 'package:theme_builder/theme_builder.dart';
 class FlutterWorkbenchApp extends StatelessWidget {
   final String title;
   final ThemeBuilderThemes themes;
+  final bool logging;
   final Widget child;
 
   FlutterWorkbenchApp({
     Key? key,
     required this.title,
     required this.themes,
+    this.logging = false,
     required this.child,
   }) : super(key: key) {}
 
@@ -22,7 +24,7 @@ class FlutterWorkbenchApp extends StatelessWidget {
         ThemeBuilderProviders.themes.overrideWithProvider(Provider((_) => themes)),
       ],
       observers: [
-        _Logger(),
+        if (logging) _Logger(),
       ],
       child: ThemeBuilder(
         builder: (BuildContext context, ThemeBuilderStyle style) {
