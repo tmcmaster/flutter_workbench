@@ -9,6 +9,7 @@ void main() {
   FlutterWorkbench.runAppContainer(
     title: 'Workbench App',
     styles: SampleStyle.themes,
+    screenshot: true,
     child: SampleApp(),
   );
 }

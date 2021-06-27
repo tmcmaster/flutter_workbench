@@ -7,6 +7,7 @@ void main() {
   FlutterWorkbench.runAppDevicePreview(
     title: 'WidgetTester',
     styles: SampleStyle.themes,
+    screenshot: true,
     device: Devices.ios.iPhone11Pro,
     child: SampleApp(),
   );

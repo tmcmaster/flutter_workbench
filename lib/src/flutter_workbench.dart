@@ -11,13 +11,15 @@ abstract class FlutterWorkbench {
   /// Run a plain container withing FlutterWorkbench application.
   static void runAppContainer({
     required String title,
-    required ThemeBuilderThemes styles,
+    ThemeBuilderThemes? styles,
+    bool screenshot = false,
     required Widget child,
   }) {
     return _runApp(
       FlutterWorkbenchApp(
         title: title,
         themes: styles,
+        screenshot: screenshot,
         child: child,
       ),
     );
@@ -27,6 +29,7 @@ abstract class FlutterWorkbench {
   static void runAppScreenTester({
     required String title,
     required ThemeBuilderThemes styles,
+    bool screenshot = false,
     required ScreenTesterOptions options,
     required Widget child,
   }) {
@@ -34,6 +37,7 @@ abstract class FlutterWorkbench {
       FlutterWorkbenchApp(
         title: title,
         themes: styles,
+        screenshot: screenshot,
         child: ScreenTester(
           options: options,
           child: child,
@@ -46,6 +50,7 @@ abstract class FlutterWorkbench {
   static void runAppWidgetTester({
     required String title,
     required ThemeBuilderThemes styles,
+    bool screenshot = false,
     required WidgetTesterOptions options,
     required List<Widget> children,
   }) {
@@ -53,6 +58,7 @@ abstract class FlutterWorkbench {
       FlutterWorkbenchApp(
         title: title,
         themes: styles,
+        screenshot: screenshot,
         child: WidgetTester(
           options: options,
           children: children,
@@ -65,6 +71,7 @@ abstract class FlutterWorkbench {
   static void runAppPixelPerfect({
     required String title,
     required ThemeBuilderThemes styles,
+    bool screenshot = false,
     required String image,
     required double scale,
     required double opacity,
@@ -74,6 +81,7 @@ abstract class FlutterWorkbench {
       FlutterWorkbenchApp(
         title: title,
         themes: styles,
+        screenshot: screenshot,
         child: PixelPerfectContainer(
           image: image,
           scale: scale,
@@ -88,6 +96,7 @@ abstract class FlutterWorkbench {
   static void runAppDevicePreview({
     required String title,
     required ThemeBuilderThemes styles,
+    bool screenshot = false,
     required DeviceInfo device,
     required Widget child,
   }) {
@@ -95,6 +104,7 @@ abstract class FlutterWorkbench {
       FlutterWorkbenchApp(
         title: title,
         themes: styles,
+        screenshot: screenshot,
         child: DevicePreviewContainer(
           device: device,
           child: child,
