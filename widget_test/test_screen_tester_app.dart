@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_workbench/flutter_workbench.dart';
 import 'package:screen_tester/screen_tester.dart';
 
@@ -5,6 +6,7 @@ import 'widgets/sample_app.dart';
 import 'widgets/sample_style.dart';
 
 void main() {
+  Widget s;
   FlutterWorkbench.runAppScreenTester(
     title: 'Screen Tester',
     styles: SampleStyle.themes,

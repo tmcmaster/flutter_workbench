@@ -38,20 +38,30 @@ class FlutterWorkbenchApp extends StatelessWidget {
             darkTheme: style.darkTheme,
             home: SafeArea(
               child: Scaffold(
-                // appBar: AppBar(
-                //   title: Text(title),
-                // ),
-                drawer: (themes != null
+                drawer: (themes != null || screenshot
                     ? Drawer(
-                        child: ThemeBuilderStyleSelector(),
+                        child: Container(
+                          padding: EdgeInsets.all(20),
+                          child: Column(
+                            children: [
+                              if (themes != null)
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Change Theme',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    ThemeBuilderStyleSelector(),
+                                  ],
+                                ),
+                              if (screenshot) ScreenshotButton(screenshotController: screenshotController)
+                            ],
+                          ),
+                        ),
                       )
                     : null),
                 body: Container(
-                  // margin: const EdgeInsets.all(15.0),
-                  // padding: const EdgeInsets.all(10.0),
-                  // decoration: BoxDecoration(
-                  //   border: Border.all(color: Colors.purple),
-                  // ),
                   child: (screenshot
                       ? Screenshot(
                           controller: screenshotController,
@@ -59,43 +69,31 @@ class FlutterWorkbenchApp extends StatelessWidget {
                         )
                       : child),
                 ),
-                floatingActionButton: Builder(
-                  builder: (context) => Row(
-                    mainAxisAlignment:
-                        (screenshot && themes != null ? MainAxisAlignment.spaceBetween : MainAxisAlignment.end),
-                    children: [
-                      if (screenshot)
-                        Container(
-                          margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                          child: FloatingActionButton(
-                            onPressed: () {
-                              print('Taking snapshot');
-                              screenshotController
-                                  .captureAndSave('/tmp', fileName: 'screenshot.png')
-                                  .then((file) async {
-                                print('Saved Screenshot: $file');
-                              });
-                            },
-                            // backgroundColor: Colors.green,
-                            child: Icon(Icons.camera),
-                          ),
-                        ),
-                      if (themes != null)
-                        FloatingActionButton(
-                          onPressed: () {
-                            Scaffold.of(context).openDrawer();
-                          },
-                          // backgroundColor: Colors.green,
-                          child: Icon(Icons.colorize),
-                        ),
-                    ],
-                  ),
-                ),
               ),
             ),
           );
         },
       ),
+    );
+  }
+}
+
+class ScreenshotButton extends StatelessWidget {
+  const ScreenshotButton({
+    Key? key,
+    required this.screenshotController,
+  }) : super(key: key);
+
+  final ScreenshotController screenshotController;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).pop();
+        screenshotController.captureAndSave('/tmp', fileName: 'screenshot.png').then((file) async {});
+      },
+      child: Text('Take a Screenshot'),
     );
   }
 }
