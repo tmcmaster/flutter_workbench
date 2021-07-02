@@ -37,17 +37,17 @@ dependencies:
     git:
       url: https://github.com/tmcmaster/theme_builder.git
 
-dependency_overrides:
-  widget_tester:
-    path: pkgs/widget_tester
-  screen_tester:
-    path: pkgs/screen_tester
-  prototype_widget:
-    path: pkgs/prototype_widget
-  scaffold_widget:
-    path: pkgs/scaffold_widget
-  theme_builder:
-    path: pkgs/theme_builder
+#dependency_overrides:
+#  widget_tester:
+#    path: pkgs/widget_tester
+#  screen_tester:
+#    path: pkgs/screen_tester
+#  prototype_widget:
+#    path: pkgs/prototype_widget
+#  scaffold_widget:
+#    path: pkgs/scaffold_widget
+#  theme_builder:
+#    path: pkgs/theme_builder
 
 dev_dependencies:
   flutter_test:
