@@ -36,6 +36,9 @@ dependencies:
   theme_builder:
     git:
       url: https://github.com/tmcmaster/theme_builder.git
+  widget_examples_tester:
+    git:
+      url: https://github.com/tmcmaster/widget_examples_tester.git
 
 #dependency_overrides:
 #  widget_tester:
