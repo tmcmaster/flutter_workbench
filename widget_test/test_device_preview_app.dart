@@ -8,7 +8,7 @@ void main() {
     title: 'WidgetTester',
     styles: SampleStyle.themes,
     screenshot: true,
-    device: Devices.ios.iPhone11Pro,
+    device: Devices.ios.iPhone12,
     child: SampleApp(),
   );
 }

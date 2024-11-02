@@ -5,7 +5,7 @@ class SampleAppHeadings extends ConsumerWidget {
   const SampleAppHeadings({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return Container(
       padding: EdgeInsets.all(30),

@@ -5,10 +5,10 @@ import 'sample_app_buttons.dart';
 import 'sample_app_headings.dart';
 
 class SampleApp extends ConsumerWidget {
-  static final counter = StateProvider((_) => 0);
+  static final counter = StateProvider<int>((_) => 0);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Sample App'),
@@ -18,9 +18,9 @@ class SampleApp extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SampleAppHeadings(),
-            Consumer(builder: (context, watch, child) {
+            Consumer(builder: (context, ref, child) {
               final theme = Theme.of(context);
-              final count = watch(counter).state;
+              final count = ref.watch(counter);
               final style = theme.textTheme.headline1!.copyWith(
                 fontStyle: FontStyle.normal,
                 color: theme.colorScheme.primary,
@@ -40,14 +40,14 @@ class SampleApp extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FloatingActionButton(
-              onPressed: () => context.read(counter).state--,
+              onPressed: () => ref.read(counter.notifier).state--,
               child: const Icon(Icons.remove),
             ),
             SizedBox(
               width: 50,
             ),
             FloatingActionButton(
-              onPressed: () => context.read(counter).state++,
+              onPressed: () => ref.read(counter.notifier).state++,
               child: const Icon(Icons.add),
             )
           ],

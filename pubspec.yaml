@@ -5,7 +5,7 @@ publish_to: 'none'
 homepage: https://github.com/tmcmaster/flutter_workbench/blob/main/README.md
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.12.0 <=3.0.5"
   flutter: ">=2.2.0"
 
 flutter:
@@ -40,17 +40,19 @@ dependencies:
     git:
       url: https://github.com/tmcmaster/widget_examples_tester.git
 
-#dependency_overrides:
-#  widget_tester:
-#    path: pkgs/widget_tester
-#  screen_tester:
-#    path: pkgs/screen_tester
-#  prototype_widget:
-#    path: pkgs/prototype_widget
-#  scaffold_widget:
-#    path: pkgs/scaffold_widget
-#  theme_builder:
-#    path: pkgs/theme_builder
+dependency_overrides:
+  widget_tester:
+    path: pkgs/widget_tester
+  screen_tester:
+    path: pkgs/screen_tester
+  prototype_widget:
+    path: pkgs/prototype_widget
+  scaffold_widget:
+    path: pkgs/scaffold_widget
+  theme_builder:
+    path: pkgs/theme_builder
+  widget_examples_tester:
+    path: pkgs/widget_examples_tester
 
 dev_dependencies:
   flutter_test:

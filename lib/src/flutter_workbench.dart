@@ -129,9 +129,9 @@ abstract class FlutterWorkbench {
         child: MaterialApp(
           home: Scaffold(
             body: Consumer(
-              builder: (context, watch, child) {
-                final themes = context.read(ThemeBuilderProviders.themes);
-                final styleNames = context.read(ThemeBuilderProviders.styleNames);
+              builder: (context, ref, child) {
+                final themes = ref.read(ThemeBuilderProviders.themes);
+                final styleNames = ref.read(ThemeBuilderProviders.styleNames);
                 return WidgetTester(
                   options: options,
                   children: styleNames.map((styleName) {
